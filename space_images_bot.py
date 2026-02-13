@@ -5,8 +5,9 @@ from dotenv import load_dotenv
 
 
 def main():
-    bot = telegram.Bot(token='8477642139:AAFNTj_ybZgT4SGfYEFasnLRb00zrOYGsWo')
     load_dotenv()
+    telegram_bot_token = os.environ['TELEGRAM_BOT_TOKEN']
+    bot = telegram.Bot(token=telegram_bot_token)
     chat_id = os.environ['TELEGRAM_CHAT_ID']
     bot.send_photo(chat_id=chat_id, photo=open('images/nasa_apod_2.jpg', 'rb'), timeout=60)
 
