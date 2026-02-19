@@ -1,7 +1,7 @@
 # Space Telegram
 
 
-The program downloads photos from NASA, spaceX, EPIC and publishes them to a Telegram channel.
+The program downloads photos from NASA, spaceX, EPIC and publishes them to a Telegram channel. If the interval between photo publications is not specified, photos will be published once per hour. If all photos have been published, photos will start to be published again in random order.
 
 ## How to install
 ### Obtaining API Keys
