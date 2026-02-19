@@ -36,7 +36,6 @@ def publish_images(bot, chat_id, interval_hours):
             time.sleep(wait_seconds)
 
 
-
 def main():
     load_dotenv()
     telegram_bot_token = os.environ['TELEGRAM_BOT_TOKEN']
