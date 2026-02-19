@@ -32,7 +32,7 @@ def publish_images(bot, chat_id, interval_hours):
             )
 
         if images_to_publish:
-            wait_seconds = interval_hours * 60
+            wait_seconds = interval_hours * 3600
             time.sleep(wait_seconds)
 
 
