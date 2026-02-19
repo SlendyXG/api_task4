@@ -41,49 +41,44 @@ python fetch_spacex_images.py --id 5eb87d47ffd86e000604b38a
 #### Download NASA APOD
 ```
 # Download 30 random APOD photos (default)
-python fetch_nasa_apod.py
+python fetch_nasa_images.py
 
 # Download 50 random APOD photos
-python fetch_nasa_apod.py --count 50
+python fetch_nasa_images.py --count 50
 
 # Download APOD photo for a specific date
-python fetch_nasa_apod.py --date 2024-01-15
-
-# Use custom API key (if not set in .env)
-python fetch_nasa_apod.py --key YOUR_API_KEY --count 20
+python fetch_nasa_images.py --date 2024-01-15
 ```
 #### Download NASA EPIC
 ```
 # Download the 5 most recent EPIC photos
 python fetch_epic_images.py
-
-# Download with custom number of photos (modify the script to change [:5] limit)
 ```
 #### Publish Single Photo to Telegram
 ```
 # Publish a random photo from the 'images' folder
-python publish_single_photo.py
+python publish_one_photo.py
 
 # Publish a specific photo
-python publish_single_photo.py --photo images/spacex_1.png
+python publish_one_photo.py --photo images/spacex_1.png
 # or
-python publish_single_photo.py -p images/nasa_apod_1.jpg
+python publish_one_photo.py -p images/nasa_apod_1.jpg
 ```
 #### Publish Photos on a Schedule
 ```
 # Publish photos every hour (default interval)
-python publish_scheduled.py
+python publish_photos.py
 
 # Publish photos every 2 hours
-python publish_scheduled.py --interval 2
+python publish_photos.py --interval 2
 # or
-python publish_scheduled.py -i 2
+python publish_photos.py -i 2
 
 # Publish photos every 30 minutes
-python publish_scheduled.py -i 0.5
+python publish_photos.py -i 0.5
 
 # Publish photos every 4 hours
-python publish_scheduled.py -i 4
+python publish_photos.py -i 4
 ```
 ## Project Goals
 
