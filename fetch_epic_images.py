@@ -1,7 +1,7 @@
 import os
+from datetime import datetime
 
 import requests
-from datetime import datetime
 
 from download_image import download_image
 
