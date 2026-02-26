@@ -5,6 +5,8 @@ import requests
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 
+from download_image import download_image
+
 
 def get_extension(url):
     parsed_url = urlparse(url)
@@ -30,13 +32,9 @@ def fetch_nasa_day_photos(nasa_api_key, count=30):
 
     for image_number, image_info in enumerate(images_data, start=1):
         image_url = image_info['url']
-        image_response = requests.get(image_url, headers=headers)
-        image_response.raise_for_status()
         extension = get_extension(image_url)
         filename = f'nasa_apod_{image_number}{extension}'
-        file_path = os.path.join('images', filename)
-        with open(file_path, 'wb') as file:
-            file.write(image_response.content)
+        download_image(image_url, filename)
 
 
 def main():

@@ -3,6 +3,8 @@ import os
 
 import requests
 
+from download_image import download_image
+
 
 def fetch_spacex_launch(launch_id=None):
     if launch_id:
@@ -17,13 +19,9 @@ def fetch_spacex_launch(launch_id=None):
     image_links = launch_data['links']['flickr']['original']
     os.makedirs('images', exist_ok=True)
 
-    for image_number, url in enumerate(image_links, start=1):
-        image_response = requests.get(url)
-        image_response.raise_for_status()
+    for image_number, image_url in enumerate(image_links, start=1):
         filename = f'spacex_{image_number}.png'
-        file_path = os.path.join('images', filename)
-        with open(file_path, 'wb') as file:
-            file.write(image_response.content)
+        download_image(image_url, filename)
 
 
 def main():
