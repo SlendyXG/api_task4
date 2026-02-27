@@ -22,6 +22,14 @@ The program requires the following keys to function:
 1. After adding the bot to your channel, send any message
 2. Get the Chat ID via @userinfobot or run this script:
 
+
+Create a .env file and add the token obtained from [Nasa](https://api.nasa.gov). Also add your bot's token and chat ID. Here's an example:
+```
+API_NASA_TOKEN=[Your Nasa token]
+TG_TOKEN=[Bot's token]
+TG_CHAT_ID=[The name of the Telegram channel to which the images are sent]
+```
+
 Python3 should be already installed. 
 Then use `pip` (or `pip3`, if there is a conflict with Python2) to install dependencies:
 ```
