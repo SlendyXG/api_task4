@@ -12,8 +12,14 @@ def main():
     bot = telegram.Bot(token=os.environ['TELEGRAM_BOT_TOKEN'])
     chat_id = os.environ['TELEGRAM_CHAT_ID']
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--photo', '-p', help='Конкретное фото (если не указано - случайное)')
+    parser = argparse.ArgumentParser(
+        description='Публикация одного фото'
+    )
+    parser.add_argument(
+        '--photo',
+        '-p',
+        help='Конкретное фото (если не указано - случайное)'
+    )
     args = parser.parse_args()
 
     if args.photo and os.path.exists(args.photo):
