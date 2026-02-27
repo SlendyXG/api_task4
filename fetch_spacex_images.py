@@ -6,9 +6,7 @@ import requests
 from download_image import download_image
 
 
-def fetch_spacex_launch(launch_id='latest'):
-    if launch_id is None:
-        launch_id = 'latest'
+def fetch_spacex_launch(launch_id):
     url = f'https://api.spacexdata.com/v5/launches/{launch_id}'
     response = requests.get(url)
     response.raise_for_status()
@@ -28,7 +26,8 @@ def main():
     parser.add_argument(
         '--id',
         type=str,
-        help='ID запуска SpaceX (если не указан, скачивается последний запуск)'
+        help='ID запуска SpaceX (если не указан, скачивается последний запуск)',
+        default='latest'
     )
     args = parser.parse_args()
     fetch_spacex_launch(args.id)
