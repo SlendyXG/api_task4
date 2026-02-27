@@ -25,7 +25,6 @@ def main():
     )
     parser.add_argument(
         '--id',
-        type=str,
         help='ID запуска SpaceX (если не указан, скачивается последний запуск)',
         default='latest'
     )
