@@ -6,16 +6,13 @@ import requests
 from download_image import download_image
 
 
-def fetch_spacex_launch(launch_id=None):
-    if launch_id:
-        url = f'https://api.spacexdata.com/v5/launches/{launch_id}'
-    else:
-        url = 'https://api.spacexdata.com/v5/launches/latest'
-
+def fetch_spacex_launch(launch_id='latest'):
+    if launch_id is None:
+        launch_id = 'latest'
+    url = f'https://api.spacexdata.com/v5/launches/{launch_id}'
     response = requests.get(url)
     response.raise_for_status()
     launch_data = response.json()
-
     image_links = launch_data['links']['flickr']['original']
     os.makedirs('images', exist_ok=True)
 
@@ -37,5 +34,5 @@ def main():
     fetch_spacex_launch(args.id)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
